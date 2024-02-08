@@ -18,7 +18,7 @@ const { href, title, body, icon } = Astro.props;
 		{body && <p>
 			{body}
 		</p>}
-		{icon && <span set:html={icon} class="absolute -bottom-6 right-6 w-24 h-24 opacity-50" />}
+		{icon && <div set:html={icon} class="absolute -bottom-6 right-6 w-24 h-24 opacity-50" />}
 	</a>
 </li>
 <style>
