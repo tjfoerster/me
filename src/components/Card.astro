@@ -1,22 +1,24 @@
 ---
 interface Props {
 	title: string;
-	body: string;
+	body?: string;
 	href: string;
+	icon?: string;
 }
 
-const { href, title, body } = Astro.props;
+const { href, title, body, icon } = Astro.props;
 ---
 
 <li class="link-card">
-	<a href={href}>
+	<a href={href} class="relative overflow-hidden">
 		<h2>
 			{title}
 			<span>&rarr;</span>
 		</h2>
-		<p>
+		{body && <p>
 			{body}
-		</p>
+		</p>}
+		{icon && <span set:html={icon} class="absolute -bottom-6 right-6 w-24 h-24 opacity-50" />}
 	</a>
 </li>
 <style>
