@@ -3,14 +3,15 @@ interface Props {
 	title: string;
 	body?: string;
 	href: string;
+	rel?: string;
 	icon?: string;
 }
 
-const { href, title, body, icon } = Astro.props;
+const { href, title, rel, body, icon } = Astro.props;
 ---
 
 <li class="link-card">
-	<a href={href} class="relative overflow-hidden">
+	<a href={href} rel={rel} class="relative overflow-hidden">
 		<h2>
 			{title}
 			<span>&rarr;</span>
